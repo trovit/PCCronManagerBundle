@@ -1,2 +1,2 @@
-# PCCronTaskBundle
-Manage cron tasks commands without relying o system operators
+# PCCronManagerBundle
+Manage cron tasks commands without relying on system operators

@@ -5,5 +5,10 @@ php:
 - hhvm
 script: phpunit --coverage-text
 
+env:
+    - SYMFONY_VERSION="2.3.*" 
+    - SYMFONY_VERSION="3.0.*"
+
 install:
+    - composer require symfony/framework-bundle:${SYMFONY_VERSION}
     - composer update $COMPOSER_FLAGS

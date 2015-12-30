@@ -1,20 +1,24 @@
 <?php
-
-
 namespace Parsingcorner\CronManagerBundle\Model;
-
 
 use Parsingcorner\CronManagerBundle\Exception\CommandNotExistsException;
 use Symfony\Component\Process\Process;
 
+/**
+ * Class that allows to execute symfony2 commands in a process appart
+ *
+ * @package Parsingcorner\CronManagerBundle\Model
+ */
 class CommandExecute
 {
+    /**
+     * @var string
+     */
     private $_consoleCommand;
     /**
      * @var CommandValidator
      */
     private $_commandValidator;
-
 
     /**
      * CommandExecute constructor.
@@ -57,7 +61,7 @@ class CommandExecute
      * @return string
      * @throws CommandNotExistsException
      */
-    public function _getCommandString($command)
+    private function _getCommandString($command)
     {
         if (!$this->_commandValidator->commandExists($command)) {
             throw new CommandNotExistsException($command);

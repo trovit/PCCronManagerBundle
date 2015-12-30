@@ -6,6 +6,11 @@ use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
 use Parsingcorner\CronManagerBundle\Exception\CommandNotExistsException;
 use Parsingcorner\CronManagerBundle\Model\CommandValidator;
 
+/**
+ * Model to update existing cron tasks
+ *
+ * @package Parsingcorner\CronManagerBundle\Model\CRUD
+ */
 class UpdateCronTask
 {
     /**
@@ -31,7 +36,7 @@ class UpdateCronTask
 
 
     /**
-     * Updates a new cron task
+     * Updates an existing cron task
      *
      * @param TblCronTask $cronTask    CronTask to update
      * @param string      $name        Name for the cron task

@@ -1,12 +1,15 @@
 <?php
 namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Entity;
 
-
 use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
 
+/**
+ * TblCronTask Mocks generator
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Entity
+ */
 class TblCronTaskMocks
 {
-
 
     /**
      * @return \Parsingcorner\CronManagerBundle\Entity\TblCronTask

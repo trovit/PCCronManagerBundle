@@ -3,7 +3,7 @@
 namespace Parsingcorner\CronManagerBundle\Entity;
 
 /**
- * TblCronTask
+ * TblCronTask entity
  */
 class TblCronTask
 {
@@ -11,8 +11,6 @@ class TblCronTask
      * @var integer
      */
     private $id;
-
-
     /**
      * @var string
      */
@@ -21,22 +19,18 @@ class TblCronTask
      * @var string
      */
     private $description;
-
     /**
      * @var string
      */
     private $command;
-
     /**
      * @var \DateTime
      */
     private $lastRun;
-
     /**
      * @var string
      */
     private $interval;
-
     /**
      * @var boolean
      */

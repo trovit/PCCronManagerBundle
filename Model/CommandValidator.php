@@ -1,16 +1,16 @@
 <?php
-
-
 namespace Parsingcorner\CronManagerBundle\Model;
-
 
 use InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\HttpKernel\Kernel;
 
+/**
+ * Class to check if a command exists
+ *
+ * @package Parsingcorner\CronManagerBundle\Model
+ */
 class CommandValidator
 {
     /**

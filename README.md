@@ -6,14 +6,14 @@ Manage cron tasks commands without relying on system operators
 
 ### Step 1: Require bundle using composer
 
-```
+```Shell
 $ composer require parsingcorner/cron-manager-bundle "~0.1"
 ```
 
 
 ### Step 2: Enable the bundle
 
-```
+```php
 <?php
 // app/AppKernel.php
 
@@ -30,7 +30,7 @@ public function registerBundles()
 
 ### Step 3: Update your database schema
 
-```
+```Shell
 $ php bin/console doctrine:schema:update --force
 ```
 
@@ -39,7 +39,7 @@ $ php bin/console doctrine:schema:update --force
 
 ### Create a new cron task
 
-```
+```php
 <?php
 
 //...
@@ -69,7 +69,7 @@ Add this line into your crontab file:
 
 You could use [Upstart](http://upstart.ubuntu.com/). If you do so, create a file named cron-manager.conf and place it in /etc/init.d:
 
-```
+```bash
 description "Cron tasks manager runner"
 author "Parsingcorner"
 
@@ -95,7 +95,7 @@ To start the daemon, execute `start cron-manager`.
 
 ### Modify an existing cron task
 
-```
+```php
 <?php
 
 //...
@@ -116,7 +116,7 @@ $this->get('parsingcorner.cron_manager.update_cron_task')->activate($cronTask);
 
 ### Delete a cron task
 
-```
+```php
 <?php
 
 //...
@@ -133,12 +133,12 @@ $this->get('parsingcorner.cron_manager.delete_cron_task')->delete($cronTask);
 
 ### List cron tasks
 
-```
+```php
 <?php
 
 //...
 $allCronTasks = $this->get('parsingcorner.cron_manager.read_cron_task')->getAllCronTasks();
-$allCronTasks = $this->get('parsingcorner.cron_manager.read_cron_task')->getActiveCronTasks();
+$activeCronTasks = $this->get('parsingcorner.cron_manager.read_cron_task')->getActiveCronTasks();
 //...
 
 ```

@@ -5,6 +5,11 @@ use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
 use Parsingcorner\CronManagerBundle\Model\CRUD\ReadCronTask;
 use Parsingcorner\CronManagerBundle\Model\CRUD\UpdateCronTask;
 
+/**
+ * Class to execute registered cron tasks
+ *
+ * @package Parsingcorner\CronManagerBundle\Model
+ */
 class CronDispatcher
 {
     /**
@@ -71,19 +76,21 @@ class CronDispatcher
     private function _checkCronTask(TblCronTask $cronTask)
     {
         if (is_null($cronTask->getLastRun())) {
-            $this->_executeCommand($cronTask);
+            $this->_startTask($cronTask);
         } else {
             $nextRun = $cronTask->getLastRun()->add(new \DateInterval($cronTask->getInterval()));
             if ($nextRun <= new \DateTime()) {
-                $this->_executeCommand($cronTask);
+                $this->_startTask($cronTask);
             }
         }
     }
 
     /**
+     * Starts the cron task
+     *
      * @param TblCronTask $cronTask
      */
-    private function _executeCommand(TblCronTask $cronTask)
+    private function _startTask(TblCronTask $cronTask)
     {
         $this->_commandExecute->executeBackgroundCommand($cronTask->getCommand());
         $this->_updateCronTask->updateLastRun($cronTask, new \DateTime());

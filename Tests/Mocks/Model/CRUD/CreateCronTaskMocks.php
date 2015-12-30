@@ -1,7 +1,11 @@
 <?php
 namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD;
 
-
+/**
+ * CreateCronTask mocks generator
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD
+ */
 class CreateCronTaskMocks
 {
     /**

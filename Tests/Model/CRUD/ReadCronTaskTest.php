@@ -2,12 +2,16 @@
 namespace Parsingcorner\CronManagerBundle\Tests\Model\CRUD;
 
 use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
-use Parsingcorner\CronManagerBundle\Model\CRUD\DeleteCronTask;
 use Parsingcorner\CronManagerBundle\Model\CRUD\ReadCronTask;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\External\EntityManagerMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\Repository\TblCronTaskRepositoryMocks;
 
+/**
+ * ReadCronTaskTest
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Model\CRUD
+ */
 class ReadCronTaskTest extends \PHPUnit_Framework_TestCase
 {
     /**

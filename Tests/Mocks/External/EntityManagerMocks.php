@@ -1,9 +1,13 @@
 <?php
 namespace Parsingcorner\CronManagerBundle\Tests\Mocks\External;
 
-
 use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
 
+/**
+ * EntityManager mocks generator
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Mocks\External
+ */
 class EntityManagerMocks
 {
     /**

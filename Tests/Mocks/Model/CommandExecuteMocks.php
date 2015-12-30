@@ -1,7 +1,11 @@
 <?php
 namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model;
 
-
+/**
+ * CommandExecute mocks generator
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model
+ */
 class CommandExecuteMocks
 {
     /**

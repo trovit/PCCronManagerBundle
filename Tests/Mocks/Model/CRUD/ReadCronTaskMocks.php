@@ -1,9 +1,13 @@
 <?php
 namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD;
 
-
 use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
 
+/**
+ * ReadCronTask mocks generator
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD
+ */
 class ReadCronTaskMocks
 {
     /**

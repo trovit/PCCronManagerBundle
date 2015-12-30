@@ -7,6 +7,11 @@ use Parsingcorner\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\External\EntityManagerMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\Repository\TblCronTaskRepositoryMocks;
 
+/**
+ * DeleteCronTaskTest
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Model\CRUD
+ */
 class DeleteCronTaskTest extends \PHPUnit_Framework_TestCase
 {
     /**

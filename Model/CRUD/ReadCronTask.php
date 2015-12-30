@@ -1,13 +1,14 @@
 <?php
-
-
 namespace Parsingcorner\CronManagerBundle\Model\CRUD;
 
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\ORMInvalidArgumentException;
 use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
 use Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository;
 
+/**
+ * Model to retrieve existing cron tasks
+ *
+ * @package Parsingcorner\CronManagerBundle\Model\CRUD
+ */
 class ReadCronTask
 {
     /**

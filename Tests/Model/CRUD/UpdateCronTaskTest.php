@@ -7,6 +7,11 @@ use Parsingcorner\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\External\EntityManagerMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CommandValidatorMocks;
 
+/**
+ * UpdateCronTaskTest
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Model\CRUD
+ */
 class UpdateCronTaskTest extends \PHPUnit_Framework_TestCase
 {
     /**

@@ -8,6 +8,11 @@ use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CommandExecuteMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD\ReadCronTaskMocks;
 use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD\UpdateCronTaskMocks;
 
+/**
+ * CronDispatcherTest
+ *
+ * @package Parsingcorner\CronManagerBundle\Tests\Model
+ */
 class CronDispatcherTest extends \PHPUnit_Framework_TestCase
 {
 

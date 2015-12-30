@@ -1,0 +1,12 @@
+# This parameter list was auto-generated, don't modify this file
+# Use 'app/console configGenerator:generateParameters [bundleName]' to generate the parameters'
+
+
+parameters:
+    parsingcorner.cron_manager.model.command_execute.class_path: Parsingcorner\CronManagerBundle\Model\CommandExecute
+    parsingcorner.cron_manager.model.command_validator.class_path: Parsingcorner\CronManagerBundle\Model\CommandValidator
+    parsingcorner.cron_manager.model.cron_dispatcher.class_path: Parsingcorner\CronManagerBundle\Model\CronDispatcher
+    parsingcorner.cron_manager.model.create_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\CreateCronTask
+    parsingcorner.cron_manager.model.delete_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\DeleteCronTask
+    parsingcorner.cron_manager.model.read_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\ReadCronTask
+    parsingcorner.cron_manager.model.update_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\UpdateCronTask

@@ -1,0 +1,43 @@
+services:
+
+  parsingcorner.cron_manager.command_validator:
+    class: %parsingcorner.cron_manager.model.command_validator.class_path%
+    arguments:
+      - @kernel
+
+  parsingcorner.cron_manager.create_cron_task:
+    class: %parsingcorner.cron_manager.model.create_cron_task.class_path%
+    arguments:
+      - @doctrine.orm.entity_manager
+      - @parsingcorner.cron_manager.command_validator
+
+  parsingcorner.cron_manager.update_cron_task:
+    class: %parsingcorner.cron_manager.model.update_cron_task.class_path%
+    arguments:
+      - @doctrine.orm.entity_manager
+      - @parsingcorner.cron_manager.command_validator
+
+  parsingcorner.cron_manager.delete_cron_task:
+    class: %parsingcorner.cron_manager.model.delete_cron_task.class_path%
+    arguments:
+      - @parsingcorner.cron_manager.cron_task.repository
+      - @doctrine.orm.entity_manager
+
+  parsingcorner.cron_manager.read_cron_task:
+    class: %parsingcorner.cron_manager.model.read_cron_task.class_path%
+    arguments:
+      - @parsingcorner.cron_manager.cron_task.repository
+
+  parsingcorner.cron_manager.command_execute:
+    class: %parsingcorner.cron_manager.model.command_execute.class_path%
+    arguments:
+      - @parsingcorner.cron_manager.command_validator
+      - %parsingcorner.cron_manager.base_console_command%
+
+  parsingcorner.cron_manager.cron_dispatcher:
+    class: %parsingcorner.cron_manager.model.cron_dispatcher.class_path%
+    arguments:
+      - @parsingcorner.cron_manager.read_cron_task
+      - @parsingcorner.cron_manager.update_cron_task
+      - @parsingcorner.cron_manager.command_execute
+      - %parsingcorner.cron_manager.check_interval%

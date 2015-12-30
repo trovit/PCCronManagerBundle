@@ -1,0 +1,46 @@
+Parsingcorner\CronManagerBundle\Entity\TblCronTask:
+    type: entity
+    table: tbl_cron_task
+    repositoryClass: Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        description:
+            type: string
+            nullable: true
+            fixed: false
+            comment: ''
+        command:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        lastRun:
+            type: datetime
+            nullable: true
+            column: last_run
+        interval:
+            type: string
+            nullable: false
+            unsigned: false
+            comment: ''
+            column: interval_cron
+        active:
+            type: boolean
+            nullable: false
+            default: true
+    lifecycleCallbacks: {  }

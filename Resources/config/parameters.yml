@@ -1,0 +1,4 @@
+parameters:
+
+  parsingcorner.cron_manager.base_console_command: %kernel.root_dir%/console
+  parsingcorner.cron_manager.check_interval: 1

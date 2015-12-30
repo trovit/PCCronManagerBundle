@@ -1,4 +1,5 @@
 # PCCronManagerBundle
+[![Build Status](https://secure.travis-ci.org/parsing-corner/PCCronManagerBundle.png)](http://travis-ci.org/parsing-corner/PCCronManagerBundle)
 Manage cron tasks commands without relying on system operators
 
 

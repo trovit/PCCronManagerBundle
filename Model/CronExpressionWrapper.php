@@ -25,7 +25,7 @@ class CronExpressionWrapper
      */
     public function createCronExpression($expression, FieldFactory $fieldFactory = null)
     {
-        CronExpression::factory($expression, $fieldFactory);
+        return CronExpression::factory($expression, $fieldFactory);
     }
 
 }

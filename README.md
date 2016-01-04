@@ -1,5 +1,5 @@
 # PCCronManagerBundle
-[![Build Status](https://secure.travis-ci.org/parsing-corner/PCCronManagerBundle.png)](http://travis-ci.org/parsing-corner/PCCronManagerBundle)
+[![Build Status](https://secure.travis-ci.org/parsing-corner/PCCronManagerBundle.png)](http://travis-ci.org/parsing-corner/PCCronManagerBundle) [![Latest Stable Version](https://poser.pugx.org/parsingcorner/cron-manager-bundle/v/stable)](https://packagist.org/packages/parsingcorner/cron-manager-bundle) [![Total Downloads](https://poser.pugx.org/parsingcorner/cron-manager-bundle/downloads)](https://packagist.org/packages/parsingcorner/cron-manager-bundle) [![Latest Unstable Version](https://poser.pugx.org/parsingcorner/cron-manager-bundle/v/unstable)](https://packagist.org/packages/parsingcorner/cron-manager-bundle) [![License](https://poser.pugx.org/parsingcorner/cron-manager-bundle/license)](https://packagist.org/packages/parsingcorner/cron-manager-bundle)
 
 Manage cron tasks commands without relying on system operators
 

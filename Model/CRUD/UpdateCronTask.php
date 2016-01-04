@@ -42,7 +42,7 @@ class UpdateCronTask
      * @param string      $name           Name for the cron task
      * @param string      $description    Description of the cron
      * @param string      $command        Command string (i.e.: "cache:clear")
-     * @param string      $cronExpression Cron expression (https://en.wikipedia.org/wiki/Cron)
+     * @param string      $cronExpression Cron expression {@link https://en.wikipedia.org/wiki/Cron}
      * @return TblCronTask
      * @throws CommandNotExistsException
      */

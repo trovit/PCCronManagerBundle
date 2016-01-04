@@ -23,18 +23,18 @@ class TblCronTaskMocks
      * @param string         $name
      * @param string         $description
      * @param string         $command
-     * @param string         $interval
+     * @param string         $cronExpression
      * @param null|\DateTime $lastRun
      * @return TblCronTask
      */
-    public function getCustomMock($name, $description, $command, $interval, $lastRun = null)
+    public function getCustomMock($name, $description, $command, $cronExpression, $lastRun = null)
     {
         $mock = $this->getBasicMock();
         $mock
             ->setName($name)
             ->setDescription($description)
             ->setCommand($command)
-            ->setInterval($interval)
+            ->setCronExpression($cronExpression)
             ->setLastRun($lastRun);
 
         return $mock;

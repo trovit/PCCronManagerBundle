@@ -27,10 +27,12 @@ class TblCronTask
      * @var \DateTime
      */
     private $lastRun;
+
     /**
      * @var string
      */
-    private $interval;
+    private $cronExpression;
+
     /**
      * @var boolean
      */
@@ -142,30 +144,6 @@ class TblCronTask
     {
         return $this->lastRun;
     }
-    /**
-     * Set interval
-     *
-     * @param string $interval
-     *
-     * @return TblCronTask
-     */
-    public function setInterval($interval)
-    {
-        $this->interval = $interval;
-
-        return $this;
-    }
-
-
-    /**
-     * Get interval
-     *
-     * @return string
-     */
-    public function getInterval()
-    {
-        return $this->interval;
-    }
 
     /**
      * Set active
@@ -188,6 +166,25 @@ class TblCronTask
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCronExpression()
+    {
+        return $this->cronExpression;
+    }
+
+    /**
+     * @param string $cronExpression
+     * @return $this
+     */
+    public function setCronExpression($cronExpression)
+    {
+        $this->cronExpression = $cronExpression;
+
+        return $this;
     }
 
 }

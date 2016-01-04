@@ -58,6 +58,7 @@ $this->get('parsingcorner.cron_manager.create_cron_task')->create(
 ### Run
 
 There are two ways to execute the cron manager: via a cronjob or via system daemon.
+It's important the cron executes every minute, due to the logic to determine if the tasks must be ran or not.
 
 #### Via Cronjob:
 

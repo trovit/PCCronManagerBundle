@@ -34,10 +34,17 @@ services:
       - @parsingcorner.cron_manager.command_validator
       - %parsingcorner.cron_manager.base_console_command%
 
+  parsingcorner.cron_manager.date_time_wrapper:
+    class: %parsingcorner.cron_manager.model.date_time_wrapper.class_path%
+
+  parsingcorner.cron_manager.cron_expression_wrapper:
+    class: %parsingcorner.cron_manager.model.cron_expression_wrapper.class_path%
+
   parsingcorner.cron_manager.cron_dispatcher:
     class: %parsingcorner.cron_manager.model.cron_dispatcher.class_path%
     arguments:
       - @parsingcorner.cron_manager.read_cron_task
       - @parsingcorner.cron_manager.update_cron_task
       - @parsingcorner.cron_manager.command_execute
+      - @parsingcorner.cron_manager.cron_expression_wrapper
       - %parsingcorner.cron_manager.check_interval%

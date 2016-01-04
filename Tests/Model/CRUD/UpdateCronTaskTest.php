@@ -43,14 +43,14 @@ class UpdateCronTaskTest extends \PHPUnit_Framework_TestCase
             $name = 'test',
             $description = 'test description',
             $command = 'cron:test',
-            $interval = 'PT5M'
+            $cronExpression = '*/5 * * * *'
         );
 
         $cronTaskAfterUpdateMock = $this->_tblCronTaskMocks->getCustomMock(
             $newName = 'test-new',
             $newDescription = 'test description new',
             $newCommand = 'cron:test-new',
-            $newInterval = 'PT10M'
+            $newCronExpression = '*/10 * * * *'
         );
 
         $sut = $this->getSut(
@@ -59,7 +59,7 @@ class UpdateCronTaskTest extends \PHPUnit_Framework_TestCase
             $commandExistsNumCalls = 1,
             $commandExists = true
         );
-        $sut->update($cronTaskMock, $newName, $newDescription, $newCommand, $newInterval);
+        $sut->update($cronTaskMock, $newName, $newDescription, $newCommand, $newCronExpression);
     }
 
     /**
@@ -71,14 +71,14 @@ class UpdateCronTaskTest extends \PHPUnit_Framework_TestCase
             $name = 'test',
             $description = 'test description',
             $command = 'cron:test',
-            $interval = 'PT5M'
+            $cronExpression = '*/5 * * * *'
         );
 
         $cronTaskAfterUpdateMock = $this->_tblCronTaskMocks->getCustomMock(
             $newName = 'test-new',
             $newDescription = 'test description new',
             $newCommand = 'cron:test-not-exists',
-            $newInterval = 'PT10M'
+            $newCronExpression = '*/10 * * * *'
         );
 
         $sut = $this->getSut(
@@ -88,7 +88,7 @@ class UpdateCronTaskTest extends \PHPUnit_Framework_TestCase
             $commandExists = false
         );
         $this->setExpectedException('Parsingcorner\CronManagerBundle\Exception\CommandNotExistsException');
-        $sut->update($cronTaskMock, $newName, $newDescription, $newCommand, $newInterval);
+        $sut->update($cronTaskMock, $newName, $newDescription, $newCommand, $newCronExpression);
     }
 
     /**
@@ -100,7 +100,7 @@ class UpdateCronTaskTest extends \PHPUnit_Framework_TestCase
             $name = 'test',
             $description = 'test description',
             $command = 'cron:test',
-            $interval = 'PT5M'
+            $cronExpression = '*/5 * * * *'
         );
 
         $cronTaskAfterUpdateMock = clone $cronTaskMock;

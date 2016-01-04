@@ -40,10 +40,10 @@ class CreateCronTaskTest extends \PHPUnit_Framework_TestCase
             $name = 'test',
             $description = 'test description',
             $command = 'cron:test',
-            $interval = 'PT5M'
+            $cronExpression = '*/5 * * * *'
         );
         $sut = $this->getSut($cronTaskMock, $persistedAndFlushedNumCalls = 1, $commandExists = true);
-        $sut->create($name, $description, $command, $interval);
+        $sut->create($name, $description, $command, $cronExpression);
     }
 
     public function testCreateCommandDoesntExists()
@@ -52,11 +52,11 @@ class CreateCronTaskTest extends \PHPUnit_Framework_TestCase
             $name = 'test',
             $description = 'test description',
             $command = 'cron:test',
-            $interval = 'PT5M'
+            $cronExpression = '*/5 * * * *'
         );
         $sut = $this->getSut($cronTaskMock, $persistedAndFlushedNumCalls = 0, $commandExists =  false);
         $this->setExpectedException('Parsingcorner\CronManagerBundle\Exception\CommandNotExistsException');
-        $sut->create($name, $description, $command, $interval);
+        $sut->create($name, $description, $command, $cronExpression);
     }
 
     private function getSut(TblCronTask $cronTask, $persistedAndFlushedNumCalls, $commandExists)

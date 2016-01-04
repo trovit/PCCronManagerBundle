@@ -38,14 +38,14 @@ class CreateCronTask
     /**
      * Creates a new cron task
      *
-     * @param string $name        Name for the cron task
-     * @param string $description Description of the cron
-     * @param string $command     Command string (i.e.: "cache:clear")
-     * @param int    $interval    Number of seconds between command executions
+     * @param string $name           Name for the cron task
+     * @param string $description    Description of the cron
+     * @param string $command        Command string (i.e.: "cache:clear")
+     * @param string $cronExpression Cron expression (https://en.wikipedia.org/wiki/Cron)
      * @return TblCronTask
      * @throws CommandNotExistsException
      */
-    public function create($name, $description, $command, $interval)
+    public function create($name, $description, $command, $cronExpression)
     {
         if (!$this->_commandValidator->commandExists($command)) {
             throw new CommandNotExistsException($command);
@@ -56,7 +56,7 @@ class CreateCronTask
             ->setName($name)
             ->setDescription($description)
             ->setCommand($command)
-            ->setInterval($interval);
+            ->setCronExpression($cronExpression);
 
         $this->_entityManager->persist($cronTask);
         $this->_entityManager->flush($cronTask);

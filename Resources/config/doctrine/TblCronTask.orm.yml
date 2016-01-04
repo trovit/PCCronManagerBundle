@@ -33,12 +33,12 @@ Parsingcorner\CronManagerBundle\Entity\TblCronTask:
             type: datetime
             nullable: true
             column: last_run
-        interval:
+        cronExpression:
             type: string
             nullable: false
             unsigned: false
             comment: ''
-            column: interval_cron
+            column: cron_expression
         active:
             type: boolean
             nullable: false

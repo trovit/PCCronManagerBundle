@@ -25,6 +25,10 @@ class CronDispatcher
      */
     private $_commandExecute;
     /**
+     * @var CronExpressionWrapper
+     */
+    private $_cronExpressionWrapper;
+    /**
      * @var int
      */
     private $_checkInterval;
@@ -33,20 +37,23 @@ class CronDispatcher
     /**
      * CronDispatcher constructor.
      *
-     * @param ReadCronTask   $readCronTask
-     * @param UpdateCronTask $updateCronTask
-     * @param CommandExecute $commandExecute
-     * @param int            $checkInterval Interval in seconds
+     * @param ReadCronTask          $readCronTask
+     * @param UpdateCronTask        $updateCronTask
+     * @param CommandExecute        $commandExecute
+     * @param CronExpressionWrapper $cronExpressionWrapper
+     * @param int                   $checkInterval Interval in seconds
      */
     public function __construct(
         ReadCronTask $readCronTask,
         UpdateCronTask $updateCronTask,
         CommandExecute $commandExecute,
+        CronExpressionWrapper $cronExpressionWrapper,
         $checkInterval
     ) {
         $this->_readCronTask = $readCronTask;
         $this->_updateCronTask = $updateCronTask;
         $this->_commandExecute = $commandExecute;
+        $this->_cronExpressionWrapper = $cronExpressionWrapper;
         $this->_checkInterval = $checkInterval;
     }
 
@@ -75,13 +82,8 @@ class CronDispatcher
      */
     private function _checkCronTask(TblCronTask $cronTask)
     {
-        if (is_null($cronTask->getLastRun())) {
+        if ($this->_cronExpressionWrapper->createCronExpression($cronTask->getCronExpression())->isDue()) {
             $this->_startTask($cronTask);
-        } else {
-            $nextRun = $cronTask->getLastRun()->add(new \DateInterval($cronTask->getInterval()));
-            if ($nextRun <= new \DateTime()) {
-                $this->_startTask($cronTask);
-            }
         }
     }
 

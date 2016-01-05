@@ -1,12 +1,12 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD;
+namespace Trovit\CronManagerBundle\Tests\Mocks\Model\CRUD;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
 
 /**
  * ReadCronTask mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD
+ * @package Trovit\CronManagerBundle\Tests\Mocks\Model\CRUD
  */
 class ReadCronTaskMocks
 {
@@ -26,18 +26,18 @@ class ReadCronTaskMocks
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Parsingcorner\CronManagerBundle\Model\CRUD\ReadCronTask
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Trovit\CronManagerBundle\Model\CRUD\ReadCronTask
      */
     public function getBasicMock()
     {
-        return $this->_testCase->getMockBuilder('Parsingcorner\\CronManagerBundle\\Model\\CRUD\\ReadCronTask')
+        return $this->_testCase->getMockBuilder('Trovit\\CronManagerBundle\\Model\\CRUD\\ReadCronTask')
             ->disableOriginalConstructor()
             ->getMock();
     }
 
     /**
      * @param TblCronTask[] $cronTasks
-     * @return \Parsingcorner\CronManagerBundle\Model\CRUD\ReadCronTask|\PHPUnit_Framework_MockObject_MockObject
+     * @return \Trovit\CronManagerBundle\Model\CRUD\ReadCronTask|\PHPUnit_Framework_MockObject_MockObject
      */
     public function getCronDispatcherTestMock(array $cronTasks)
     {

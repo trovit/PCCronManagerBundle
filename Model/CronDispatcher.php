@@ -1,14 +1,14 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Model;
+namespace Trovit\CronManagerBundle\Model;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
-use Parsingcorner\CronManagerBundle\Model\CRUD\ReadCronTask;
-use Parsingcorner\CronManagerBundle\Model\CRUD\UpdateCronTask;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Model\CRUD\ReadCronTask;
+use Trovit\CronManagerBundle\Model\CRUD\UpdateCronTask;
 
 /**
  * Class to execute registered cron tasks
  *
- * @package Parsingcorner\CronManagerBundle\Model
+ * @package Trovit\CronManagerBundle\Model
  */
 class CronDispatcher
 {

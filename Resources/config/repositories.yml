@@ -1,7 +1,7 @@
 services:
 
-  parsingcorner.cron_manager.cron_task.repository:
+  trovit.cron_manager.cron_task.repository:
         class: %entityRepository.class%
         public: false
         factory: [@doctrine.orm.entity_manager, getRepository]
-        arguments: [%parsingcorner.cron_manager.entity.tbl_cron_task.class_path%]
+        arguments: [%trovit.cron_manager.entity.tbl_cron_task.class_path%]

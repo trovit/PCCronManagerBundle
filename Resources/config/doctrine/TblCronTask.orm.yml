@@ -1,7 +1,7 @@
-Parsingcorner\CronManagerBundle\Entity\TblCronTask:
+Trovit\CronManagerBundle\Entity\TblCronTask:
     type: entity
     table: tbl_cron_task
-    repositoryClass: Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository
+    repositoryClass: Trovit\CronManagerBundle\Repository\TblCronTaskRepository
     id:
         id:
             type: integer

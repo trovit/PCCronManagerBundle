@@ -1,5 +1,5 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Model;
+namespace Trovit\CronManagerBundle\Model;
 
 use InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Kernel;
 /**
  * Class to check if a command exists
  *
- * @package Parsingcorner\CronManagerBundle\Model
+ * @package Trovit\CronManagerBundle\Model
  */
 class CommandValidator
 {

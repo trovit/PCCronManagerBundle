@@ -3,3 +3,5 @@ phpunit.xml
 Tests/autoload.php
 
 vendor/*
+.idea/
+.gitignore

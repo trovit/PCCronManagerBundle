@@ -1,12 +1,12 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Repository;
+namespace Trovit\CronManagerBundle\Tests\Mocks\Repository;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
 
 /**
  * TblCronTaskRepository mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Repository
+ * @package Trovit\CronManagerBundle\Tests\Mocks\Repository
  */
 class TblCronTaskRepositoryMocks
 {
@@ -26,11 +26,11 @@ class TblCronTaskRepositoryMocks
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Trovit\CronManagerBundle\Repository\TblCronTaskRepository
      */
     public function getBasicMock()
     {
-        return $this->_testCase->getMockBuilder('Parsingcorner\\CronManagerBundle\\Repository\\TblCronTaskRepository')
+        return $this->_testCase->getMockBuilder('Trovit\\CronManagerBundle\\Repository\\TblCronTaskRepository')
             ->disableOriginalConstructor()
             ->getMock();
     }
@@ -39,7 +39,7 @@ class TblCronTaskRepositoryMocks
     /**
      * @param int         $id
      * @param TblCronTask $cronTask
-     * @return \Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository|\PHPUnit_Framework_MockObject_MockObject
+     * @return \Trovit\CronManagerBundle\Repository\TblCronTaskRepository|\PHPUnit_Framework_MockObject_MockObject
      */
     public function getDeleteByIdCronTaskTestMock($id, TblCronTask $cronTask = null)
     {
@@ -54,7 +54,7 @@ class TblCronTaskRepositoryMocks
 
     /**
      * @param TblCronTask[] $cronTasks
-     * @return \Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository|\PHPUnit_Framework_MockObject_MockObject
+     * @return \Trovit\CronManagerBundle\Repository\TblCronTaskRepository|\PHPUnit_Framework_MockObject_MockObject
      */
     public function getReadMock(array $cronTasks)
     {

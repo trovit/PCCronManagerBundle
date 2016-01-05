@@ -1,10 +1,10 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Exception;
+namespace Trovit\CronManagerBundle\Exception;
 
 /**
  * Exception thrown when cron task does not exist
  *
- * @package Parsingcorner\CronManagerBundle\Exception
+ * @package Trovit\CronManagerBundle\Exception
  */
 class CronTaskNotExistsException extends \Exception
 {

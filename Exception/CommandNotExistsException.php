@@ -1,10 +1,10 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Exception;
+namespace Trovit\CronManagerBundle\Exception;
 
 /**
  * Exception thrown when a command does not exists
  *
- * @package Parsingcorner\CronManagerBundle\Exception
+ * @package Trovit\CronManagerBundle\Exception
  */
 class CommandNotExistsException extends \Exception
 {

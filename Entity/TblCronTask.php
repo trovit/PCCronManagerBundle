@@ -1,6 +1,6 @@
 <?php
 
-namespace Parsingcorner\CronManagerBundle\Entity;
+namespace Trovit\CronManagerBundle\Entity;
 
 /**
  * TblCronTask entity

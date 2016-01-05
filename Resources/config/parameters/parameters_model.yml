@@ -3,12 +3,12 @@
 
 
 parameters:
-    parsingcorner.cron_manager.model.command_execute.class_path: Parsingcorner\CronManagerBundle\Model\CommandExecute
-    parsingcorner.cron_manager.model.command_validator.class_path: Parsingcorner\CronManagerBundle\Model\CommandValidator
-    parsingcorner.cron_manager.model.cron_dispatcher.class_path: Parsingcorner\CronManagerBundle\Model\CronDispatcher
-    parsingcorner.cron_manager.model.create_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\CreateCronTask
-    parsingcorner.cron_manager.model.delete_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\DeleteCronTask
-    parsingcorner.cron_manager.model.read_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\ReadCronTask
-    parsingcorner.cron_manager.model.update_cron_task.class_path: Parsingcorner\CronManagerBundle\Model\CRUD\UpdateCronTask
-    parsingcorner.cron_manager.model.date_time_wrapper.class_path: Parsingcorner\CronManagerBundle\Model\DateTimeWrapper
-    parsingcorner.cron_manager.model.cron_expression_wrapper.class_path: Parsingcorner\CronManagerBundle\Model\CronExpressionWrapper
+    trovit.cron_manager.model.command_execute.class_path: Trovit\CronManagerBundle\Model\CommandExecute
+    trovit.cron_manager.model.command_validator.class_path: Trovit\CronManagerBundle\Model\CommandValidator
+    trovit.cron_manager.model.cron_dispatcher.class_path: Trovit\CronManagerBundle\Model\CronDispatcher
+    trovit.cron_manager.model.create_cron_task.class_path: Trovit\CronManagerBundle\Model\CRUD\CreateCronTask
+    trovit.cron_manager.model.delete_cron_task.class_path: Trovit\CronManagerBundle\Model\CRUD\DeleteCronTask
+    trovit.cron_manager.model.read_cron_task.class_path: Trovit\CronManagerBundle\Model\CRUD\ReadCronTask
+    trovit.cron_manager.model.update_cron_task.class_path: Trovit\CronManagerBundle\Model\CRUD\UpdateCronTask
+    trovit.cron_manager.model.date_time_wrapper.class_path: Trovit\CronManagerBundle\Model\DateTimeWrapper
+    trovit.cron_manager.model.cron_expression_wrapper.class_path: Trovit\CronManagerBundle\Model\CronExpressionWrapper

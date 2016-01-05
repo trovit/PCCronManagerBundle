@@ -1,12 +1,12 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model;
+namespace Trovit\CronManagerBundle\Tests\Mocks\Model;
 
-use Parsingcorner\CronManagerBundle\Tests\Mocks\External\CronExpressionMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\External\CronExpressionMocks;
 
 /**
  * CronExpressionWrapper mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model
+ * @package Trovit\CronManagerBundle\Tests\Mocks\Model
  */
 class CronExpressionWrapperMocks
 {
@@ -26,18 +26,18 @@ class CronExpressionWrapperMocks
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Parsingcorner\CronManagerBundle\Model\CronExpressionWrapper
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Trovit\CronManagerBundle\Model\CronExpressionWrapper
      */
     public function getBasicMock()
     {
-        return $this->_testCase->getMockBuilder('Parsingcorner\\CronManagerBundle\\Model\\CronExpressionWrapper')
+        return $this->_testCase->getMockBuilder('Trovit\\CronManagerBundle\\Model\\CronExpressionWrapper')
             ->disableOriginalConstructor()
             ->getMock();
     }
 
     /**
      * @param $isDue
-     * @return \Parsingcorner\CronManagerBundle\Model\CronExpressionWrapper|\PHPUnit_Framework_MockObject_MockObject
+     * @return \Trovit\CronManagerBundle\Model\CronExpressionWrapper|\PHPUnit_Framework_MockObject_MockObject
      */
     public function getCronDispatcherTestMock($isDue)
     {

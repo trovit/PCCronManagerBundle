@@ -1,12 +1,12 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\External;
+namespace Trovit\CronManagerBundle\Tests\Mocks\External;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
 
 /**
  * CronExpression mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\External
+ * @package Trovit\CronManagerBundle\Tests\Mocks\External
  */
 class CronExpressionMocks
 {

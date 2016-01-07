@@ -1,9 +1,9 @@
 <?php
 
-namespace Parsingcorner\CronManagerBundle\Repository;
+namespace Trovit\CronManagerBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
 
 /**
  * TblCronTaskRepository

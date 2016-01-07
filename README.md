@@ -1,5 +1,5 @@
 # PCCronManagerBundle
-[![Build Status](https://secure.travis-ci.org/parsing-corner/PCCronManagerBundle.png)](http://travis-ci.org/parsing-corner/PCCronManagerBundle) [![Latest Stable Version](https://poser.pugx.org/parsingcorner/cron-manager-bundle/v/stable)](https://packagist.org/packages/parsingcorner/cron-manager-bundle) [![Total Downloads](https://poser.pugx.org/parsingcorner/cron-manager-bundle/downloads)](https://packagist.org/packages/parsingcorner/cron-manager-bundle) [![Latest Unstable Version](https://poser.pugx.org/parsingcorner/cron-manager-bundle/v/unstable)](https://packagist.org/packages/parsingcorner/cron-manager-bundle) [![License](https://poser.pugx.org/parsingcorner/cron-manager-bundle/license)](https://packagist.org/packages/parsingcorner/cron-manager-bundle)
+[![Build Status](https://secure.travis-ci.org/trovit/PCCronManagerBundle.png)](http://travis-ci.org/trovit/PCCronManagerBundle) [![Latest Stable Version](https://poser.pugx.org/trovit/cron-manager-bundle/v/stable)](https://packagist.org/packages/trovit/cron-manager-bundle) [![Total Downloads](https://poser.pugx.org/trovit/cron-manager-bundle/downloads)](https://packagist.org/packages/trovit/cron-manager-bundle) [![Latest Unstable Version](https://poser.pugx.org/trovit/cron-manager-bundle/v/unstable)](https://packagist.org/packages/trovit/cron-manager-bundle) [![License](https://poser.pugx.org/trovit/cron-manager-bundle/license)](https://packagist.org/packages/trovit/cron-manager-bundle)
 
 Manage cron tasks commands without relying on system operators
 
@@ -9,7 +9,7 @@ Manage cron tasks commands without relying on system operators
 ### Step 1: Require bundle using composer
 
 ```Shell
-$ composer require parsingcorner/cron-manager-bundle "~0.1"
+$ composer require trovit/cron-manager-bundle "~0.1"
 ```
 
 
@@ -23,7 +23,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Parsingcorner\CronManagerBundle\ParsingcornerCronManagerBundle(),
+        new Trovit\CronManagerBundle\TrovitCronManagerBundle(),
         // ...
     );
 }
@@ -45,7 +45,7 @@ $ php bin/console doctrine:schema:update --force
 <?php
 
 //...
-$this->get('parsingcorner.cron_manager.create_cron_task')->create(
+$this->get('trovit.cron_manager.create_cron_task')->create(
     $name = 'CronTask Example',
     $description = 'Example cron task',
     $command = 'cache:clear',
@@ -74,7 +74,7 @@ You could use [Upstart](http://upstart.ubuntu.com/). If you do so, create a file
 
 ```bash
 description "Cron tasks manager runner"
-author "Parsingcorner"
+author "Trovit"
 
 # Tell Upstart to respawn our command on a crash
 # stop restarting if it crashes more then 5 times within 10 seconds
@@ -102,8 +102,8 @@ To start the daemon, execute `start cron-manager`.
 <?php
 
 //...
-$cronTask = $this->getDoctrine()->getRepository('ParsingcornerCronManagerBundle:TblCronTask')->find($id);
-$this->get('parsingcorner.cron_manager.update_cron_task')->update(
+$cronTask = $this->getDoctrine()->getRepository('TrovitCronManagerBundle:TblCronTask')->find($id);
+$this->get('trovit.cron_manager.update_cron_task')->update(
     $cronTask,
     $name = 'CronTask Example updated',
     $description = 'Example cron task updated',
@@ -111,8 +111,8 @@ $this->get('parsingcorner.cron_manager.update_cron_task')->update(
     $interval = 'PT30M' // DateInterval format: http://php.net/manual/en/dateinterval.construct.php
 );
 
-$this->get('parsingcorner.cron_manager.update_cron_task')->deactivate($cronTask);
-$this->get('parsingcorner.cron_manager.update_cron_task')->activate($cronTask);
+$this->get('trovit.cron_manager.update_cron_task')->deactivate($cronTask);
+$this->get('trovit.cron_manager.update_cron_task')->activate($cronTask);
 //...
 
 ```
@@ -123,11 +123,11 @@ $this->get('parsingcorner.cron_manager.update_cron_task')->activate($cronTask);
 <?php
 
 //...
-$cronTask = $this->getDoctrine()->getRepository('ParsingcornerCronManagerBundle:TblCronTask')->find($id);
-$this->get('parsingcorner.cron_manager.delete_cron_task')->delete($cronTask);
+$cronTask = $this->getDoctrine()->getRepository('TrovitCronManagerBundle:TblCronTask')->find($id);
+$this->get('trovit.cron_manager.delete_cron_task')->delete($cronTask);
 
 // It can also be deleted by id
-// $this->get('parsingcorner.cron_manager.delete_cron_task')->deleteById($id);
+// $this->get('trovit.cron_manager.delete_cron_task')->deleteById($id);
 
 //...
 
@@ -140,8 +140,8 @@ $this->get('parsingcorner.cron_manager.delete_cron_task')->delete($cronTask);
 <?php
 
 //...
-$allCronTasks = $this->get('parsingcorner.cron_manager.read_cron_task')->getAllCronTasks();
-$activeCronTasks = $this->get('parsingcorner.cron_manager.read_cron_task')->getActiveCronTasks();
+$allCronTasks = $this->get('trovit.cron_manager.read_cron_task')->getAllCronTasks();
+$activeCronTasks = $this->get('trovit.cron_manager.read_cron_task')->getActiveCronTasks();
 //...
 
 ```

@@ -1,16 +1,16 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Model\CRUD;
+namespace Trovit\CronManagerBundle\Tests\Model\CRUD;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
-use Parsingcorner\CronManagerBundle\Model\CRUD\CreateCronTask;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\External\EntityManagerMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CommandValidatorMocks;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Model\CRUD\CreateCronTask;
+use Trovit\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\External\EntityManagerMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\Model\CommandValidatorMocks;
 
 /**
  * CreateCronTaskTest
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Model\CRUD
+ * @package Trovit\CronManagerBundle\Tests\Model\CRUD
  */
 class CreateCronTaskTest extends \PHPUnit_Framework_TestCase
 {
@@ -55,7 +55,7 @@ class CreateCronTaskTest extends \PHPUnit_Framework_TestCase
             $cronExpression = '*/5 * * * *'
         );
         $sut = $this->getSut($cronTaskMock, $persistedAndFlushedNumCalls = 0, $commandExists =  false);
-        $this->setExpectedException('Parsingcorner\CronManagerBundle\Exception\CommandNotExistsException');
+        $this->setExpectedException('Trovit\CronManagerBundle\Exception\CommandNotExistsException');
         $sut->create($name, $description, $command, $cronExpression);
     }
 

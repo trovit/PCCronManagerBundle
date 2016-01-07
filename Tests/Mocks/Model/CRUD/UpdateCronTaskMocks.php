@@ -1,10 +1,10 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD;
+namespace Trovit\CronManagerBundle\Tests\Mocks\Model\CRUD;
 
 /**
  * UpdateCronTask mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD
+ * @package Trovit\CronManagerBundle\Tests\Mocks\Model\CRUD
  */
 class UpdateCronTaskMocks
 {
@@ -24,18 +24,18 @@ class UpdateCronTaskMocks
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Parsingcorner\CronManagerBundle\Model\CRUD\UpdateCronTask
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Trovit\CronManagerBundle\Model\CRUD\UpdateCronTask
      */
     public function getBasicMock()
     {
-        return $this->_testCase->getMockBuilder('Parsingcorner\\CronManagerBundle\\Model\\CRUD\\UpdateCronTask')
+        return $this->_testCase->getMockBuilder('Trovit\\CronManagerBundle\\Model\\CRUD\\UpdateCronTask')
             ->disableOriginalConstructor()
             ->getMock();
     }
 
     /**
      * @param int $updateLastRunNumCalls
-     * @return \Parsingcorner\CronManagerBundle\Model\CRUD\UpdateCronTask|\PHPUnit_Framework_MockObject_MockObject
+     * @return \Trovit\CronManagerBundle\Model\CRUD\UpdateCronTask|\PHPUnit_Framework_MockObject_MockObject
      */
     public function getCronDispatcherTestMock($updateLastRunNumCalls)
     {

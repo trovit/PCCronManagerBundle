@@ -1,18 +1,18 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Model;
+namespace Trovit\CronManagerBundle\Tests\Model;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
-use Parsingcorner\CronManagerBundle\Model\CronDispatcher;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CommandExecuteMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CronExpressionWrapperMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD\ReadCronTaskMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Model\CRUD\UpdateCronTaskMocks;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Model\CronDispatcher;
+use Trovit\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\Model\CommandExecuteMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\Model\CronExpressionWrapperMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\Model\CRUD\ReadCronTaskMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\Model\CRUD\UpdateCronTaskMocks;
 
 /**
  * CronDispatcherTest
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Model
+ * @package Trovit\CronManagerBundle\Tests\Model
  */
 class CronDispatcherTest extends \PHPUnit_Framework_TestCase
 {

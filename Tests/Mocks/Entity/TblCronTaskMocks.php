@@ -1,18 +1,18 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Entity;
+namespace Trovit\CronManagerBundle\Tests\Mocks\Entity;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
 
 /**
  * TblCronTask Mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Entity
+ * @package Trovit\CronManagerBundle\Tests\Mocks\Entity
  */
 class TblCronTaskMocks
 {
 
     /**
-     * @return \Parsingcorner\CronManagerBundle\Entity\TblCronTask
+     * @return \Trovit\CronManagerBundle\Entity\TblCronTask
      */
     public function getBasicMock()
     {

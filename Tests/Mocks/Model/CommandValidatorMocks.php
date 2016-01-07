@@ -1,10 +1,10 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model;
+namespace Trovit\CronManagerBundle\Tests\Mocks\Model;
 
 /**
  * CommandValidator mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model
+ * @package Trovit\CronManagerBundle\Tests\Mocks\Model
  */
 class CommandValidatorMocks
 {
@@ -24,18 +24,18 @@ class CommandValidatorMocks
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Parsingcorner\CronManagerBundle\Model\CommandValidator
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Trovit\CronManagerBundle\Model\CommandValidator
      */
     public function getBasicMock()
     {
-        return $this->_testCase->getMockBuilder('Parsingcorner\\CronManagerBundle\\Model\\CommandValidator')
+        return $this->_testCase->getMockBuilder('Trovit\\CronManagerBundle\\Model\\CommandValidator')
             ->disableOriginalConstructor()
             ->getMock();
     }
 
     /**
      * @param bool $commandExistsReturn
-     * @return \Parsingcorner\CronManagerBundle\Model\CommandValidator|\PHPUnit_Framework_MockObject_MockObject
+     * @return \Trovit\CronManagerBundle\Model\CommandValidator|\PHPUnit_Framework_MockObject_MockObject
      */
     public function getCreateCronTaskTestMock($commandExistsReturn)
     {
@@ -50,7 +50,7 @@ class CommandValidatorMocks
     /**
      * @param int  $commandExistsNumCalls
      * @param bool $commandExistsReturn
-     * @return \Parsingcorner\CronManagerBundle\Model\CommandValidator|\PHPUnit_Framework_MockObject_MockObject
+     * @return \Trovit\CronManagerBundle\Model\CommandValidator|\PHPUnit_Framework_MockObject_MockObject
      */
     public function getUpdateCronTaskTestMock($commandExistsNumCalls, $commandExistsReturn)
     {

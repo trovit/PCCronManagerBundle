@@ -1,6 +1,6 @@
 <?php
 
-namespace Parsingcorner\CronManagerBundle\Command;
+namespace Trovit\CronManagerBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -10,7 +10,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Command to start cron manager
  *
- * @package Parsingcorner\CronManagerBundle\Command
+ * @package Trovit\CronManagerBundle\Command
  */
 class CronManagerCommand extends ContainerAwareCommand
 {
@@ -36,7 +36,7 @@ class CronManagerCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->getContainer()->get('parsingcorner.cron_manager.cron_dispatcher')->executeCrons(
+        $this->getContainer()->get('trovit.cron_manager.cron_dispatcher')->executeCrons(
             $input->getOption('daemon')
         );
     }

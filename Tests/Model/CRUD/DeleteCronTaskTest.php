@@ -1,16 +1,16 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Model\CRUD;
+namespace Trovit\CronManagerBundle\Tests\Model\CRUD;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
-use Parsingcorner\CronManagerBundle\Model\CRUD\DeleteCronTask;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\External\EntityManagerMocks;
-use Parsingcorner\CronManagerBundle\Tests\Mocks\Repository\TblCronTaskRepositoryMocks;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Model\CRUD\DeleteCronTask;
+use Trovit\CronManagerBundle\Tests\Mocks\Entity\TblCronTaskMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\External\EntityManagerMocks;
+use Trovit\CronManagerBundle\Tests\Mocks\Repository\TblCronTaskRepositoryMocks;
 
 /**
  * DeleteCronTaskTest
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Model\CRUD
+ * @package Trovit\CronManagerBundle\Tests\Model\CRUD
  */
 class DeleteCronTaskTest extends \PHPUnit_Framework_TestCase
 {
@@ -60,7 +60,7 @@ class DeleteCronTaskTest extends \PHPUnit_Framework_TestCase
     public function testDeleteByIdDoesNotExists()
     {
         $sut = $this->_getSutDeleteById($id = 3, null, 0);
-        $this->setExpectedException('Parsingcorner\CronManagerBundle\Exception\CronTaskNotExistsException');
+        $this->setExpectedException('Trovit\CronManagerBundle\Exception\CronTaskNotExistsException');
         $sut->deleteById($id);
     }
 

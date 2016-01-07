@@ -1,15 +1,15 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Model\CRUD;
+namespace Trovit\CronManagerBundle\Model\CRUD;
 
 use Doctrine\ORM\EntityManager;
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
-use Parsingcorner\CronManagerBundle\Exception\CronTaskNotExistsException;
-use Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Exception\CronTaskNotExistsException;
+use Trovit\CronManagerBundle\Repository\TblCronTaskRepository;
 
 /**
  * Model to delete cron tasks
  *
- * @package Parsingcorner\CronManagerBundle\Model\CRUD
+ * @package Trovit\CronManagerBundle\Model\CRUD
  */
 class DeleteCronTask
 {

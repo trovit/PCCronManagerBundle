@@ -3,4 +3,4 @@
 
 
 parameters:
-    parsingcorner.cron_manager.entity.tbl_cron_task.class_path: Parsingcorner\CronManagerBundle\Entity\TblCronTask
+    trovit.cron_manager.entity.tbl_cron_task.class_path: Trovit\CronManagerBundle\Entity\TblCronTask

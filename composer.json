@@ -1,10 +1,10 @@
 {
-  "name" : "parsingcorner/cron-manager-bundle",
+  "name" : "trovit/cron-manager-bundle",
   "description" : "A simple cron manager that allow to schedule commands without relying on system operators",
   "type" : "symfony-bundle",
   "authors" : [{
-    "name" : "Parsing Corner",
-    "email" : "parsingcorner@gmail.com"
+    "name" : "Trovit",
+    "email" : "trovit@gmail.com"
   }],
   "keywords" : [
     "cron", "manager", "command", "task", "schedule"
@@ -30,8 +30,8 @@
   },
   "autoload" : {
     "psr-0" : {
-      "Parsingcorner\\CronManagerBundle" : ""
+      "Trovit\\CronManagerBundle" : ""
     }
   },
-  "target-dir" : "Parsingcorner/CronManagerBundle"
+  "target-dir" : "Trovit/CronManagerBundle"
 }

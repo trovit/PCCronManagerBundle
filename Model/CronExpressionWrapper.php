@@ -1,5 +1,5 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Model;
+namespace Trovit\CronManagerBundle\Model;
 
 use Cron\CronExpression;
 use Cron\FieldFactory;

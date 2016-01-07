@@ -1,10 +1,10 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Tests\Mocks\Model;
+namespace Trovit\CronManagerBundle\Tests\Mocks\Model;
 
 /**
  * CommandExecute mocks generator
  *
- * @package Parsingcorner\CronManagerBundle\Tests\Mocks\Model
+ * @package Trovit\CronManagerBundle\Tests\Mocks\Model
  */
 class CommandExecuteMocks
 {
@@ -24,11 +24,11 @@ class CommandExecuteMocks
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|\Parsingcorner\CronManagerBundle\Model\CommandExecute
+     * @return \PHPUnit_Framework_MockObject_MockObject|\Trovit\CronManagerBundle\Model\CommandExecute
      */
     public function getBasicMock()
     {
-        return $this->_testCase->getMockBuilder('Parsingcorner\\CronManagerBundle\\Model\\CommandExecute')
+        return $this->_testCase->getMockBuilder('Trovit\\CronManagerBundle\\Model\\CommandExecute')
             ->disableOriginalConstructor()
             ->getMock();
     }

@@ -1,13 +1,13 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Model;
+namespace Trovit\CronManagerBundle\Model;
 
-use Parsingcorner\CronManagerBundle\Exception\CommandNotExistsException;
+use Trovit\CronManagerBundle\Exception\CommandNotExistsException;
 use Symfony\Component\Process\Process;
 
 /**
  * Class that allows to execute symfony2 commands in a process appart
  *
- * @package Parsingcorner\CronManagerBundle\Model
+ * @package Trovit\CronManagerBundle\Model
  */
 class CommandExecute
 {

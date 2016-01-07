@@ -1,13 +1,13 @@
 <?php
-namespace Parsingcorner\CronManagerBundle\Model\CRUD;
+namespace Trovit\CronManagerBundle\Model\CRUD;
 
-use Parsingcorner\CronManagerBundle\Entity\TblCronTask;
-use Parsingcorner\CronManagerBundle\Repository\TblCronTaskRepository;
+use Trovit\CronManagerBundle\Entity\TblCronTask;
+use Trovit\CronManagerBundle\Repository\TblCronTaskRepository;
 
 /**
  * Model to retrieve existing cron tasks
  *
- * @package Parsingcorner\CronManagerBundle\Model\CRUD
+ * @package Trovit\CronManagerBundle\Model\CRUD
  */
 class ReadCronTask
 {

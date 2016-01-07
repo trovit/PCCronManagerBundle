@@ -1,6 +1,6 @@
 # PCCronManagerBundle
 [![Build Status](https://secure.travis-ci.org/trovit/PCCronManagerBundle.png)](http://travis-ci.org/trovit/PCCronManagerBundle) 
-[![Latest Stable Version](https://poser.pugx.org/trovit/cron-manager-bundle/v/stable)](https://packagist.org/packages/trovit/cron-manager-bundle) [![Total Downloads](https://poser.pugx.org/trovit/cron-manager-bundle/downloads)](https://packagist.org/packages/trovit/cron-manager-bundle) [![Latest Unstable Version](https://poser.pugx.org/trovit/cron-manager-bundle/v/unstable)](https://packagist.org/packages/trovit/cron-manager-bundle) [![License](https://poser.pugx.org/trovit/cron-manager-bundle/license)](https://packagist.org/packages/trovit/cron-manager-bundle)
+[![Latest Stable Version](https://poser.pugx.org/trovit/cron-manager-bundle/v/stable.png)](https://packagist.org/packages/trovit/cron-manager-bundle) [![Total Downloads](https://poser.pugx.org/trovit/cron-manager-bundle/downloads.png)](https://packagist.org/packages/trovit/cron-manager-bundle) [![Latest Unstable Version](https://poser.pugx.org/trovit/cron-manager-bundle/v/unstable.png)](https://packagist.org/packages/trovit/cron-manager-bundle) [![License](https://poser.pugx.org/trovit/cron-manager-bundle/license.png)](https://packagist.org/packages/trovit/cron-manager-bundle)
 
 Manage cron tasks commands without relying on system operators
 

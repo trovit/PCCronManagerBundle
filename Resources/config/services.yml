@@ -33,6 +33,7 @@ services:
     arguments:
       - @trovit.cron_manager.command_validator
       - %trovit.cron_manager.base_console_command%
+      - %kernel.environment%
 
   trovit.cron_manager.date_time_wrapper:
     class: %trovit.cron_manager.model.date_time_wrapper.class_path%

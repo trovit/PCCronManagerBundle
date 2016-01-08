@@ -19,17 +19,23 @@ class CommandExecute
      * @var CommandValidator
      */
     private $_commandValidator;
+    /**
+     * @var string
+     */
+    private $_environment;
 
     /**
      * CommandExecute constructor.
      *
      * @param CommandValidator $commandValidator
      * @param                  $consoleCommand
+     * @param                  $environment
      */
-    public function __construct(CommandValidator $commandValidator, $consoleCommand)
+    public function __construct(CommandValidator $commandValidator, $consoleCommand, $environment)
     {
         $this->_consoleCommand = $consoleCommand;
         $this->_commandValidator = $commandValidator;
+        $this->_environment = $environment;
     }
 
     /**
@@ -66,6 +72,6 @@ class CommandExecute
         if (!$this->_commandValidator->commandExists($command)) {
             throw new CommandNotExistsException($command);
         }
-        return $this->_consoleCommand.' '.$command;
+        return $this->_consoleCommand.' '.$command . ' --env=' . $this->_environment;
     }
 }

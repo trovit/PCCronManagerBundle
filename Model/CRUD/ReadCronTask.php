@@ -42,4 +42,13 @@ class ReadCronTask
     {
         return $this->_cronTaskRepository->getActiveCronTasks();
     }
+
+    /**
+     * @param int $id
+     * @return null|TblCronTask
+     */
+    public function getCronById($id)
+    {
+        return $this->_cronTaskRepository->find($id);
+    }
 }

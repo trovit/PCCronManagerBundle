@@ -1,0 +1,30 @@
+tblcrontask:
+    path:     /
+    defaults: { _controller: "TrovitCronManagerBundle:TblCronTask:index" }
+
+tblcrontask_show:
+    path:     /{id}/show
+    defaults: { _controller: "TrovitCronManagerBundle:TblCronTask:show" }
+
+tblcrontask_new:
+    path:     /new
+    defaults: { _controller: "TrovitCronManagerBundle:TblCronTask:new" }
+
+tblcrontask_create:
+    path:     /create
+    defaults: { _controller: "TrovitCronManagerBundle:TblCronTask:create" }
+    methods:  POST
+
+tblcrontask_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TrovitCronManagerBundle:TblCronTask:edit" }
+
+tblcrontask_update:
+    path:     /{id}/update
+    defaults: { _controller: "TrovitCronManagerBundle:TblCronTask:update" }
+    methods:  [POST, PUT]
+
+tblcrontask_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TrovitCronManagerBundle:TblCronTask:delete" }
+    methods:  [POST, DELETE]

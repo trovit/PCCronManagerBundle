@@ -34,7 +34,6 @@ class CreateCronTask
         $this->_commandValidator = $commandValidator;
     }
 
-
     /**
      * Creates a new cron task
      *
@@ -47,16 +46,29 @@ class CreateCronTask
      */
     public function create($name, $description, $command, $cronExpression)
     {
-        if (!$this->_commandValidator->commandExists($command)) {
-            throw new CommandNotExistsException($command);
-        }
-
         $cronTask = new TblCronTask();
         $cronTask
             ->setName($name)
             ->setDescription($description)
             ->setCommand($command)
             ->setCronExpression($cronExpression);
+
+        return $this->persistCron($cronTask);
+    }
+
+
+    /**
+     * Creates a new cron task
+     *
+     * @param TblCronTask $cronTask
+     * @return TblCronTask
+     * @throws CommandNotExistsException
+     */
+    public function persistCron(TblCronTask $cronTask)
+    {
+        if (!$this->_commandValidator->commandExists($cronTask->getCommand())) {
+            throw new CommandNotExistsException($cronTask->getCommand());
+        }
 
         $this->_entityManager->persist($cronTask);
         $this->_entityManager->flush($cronTask);

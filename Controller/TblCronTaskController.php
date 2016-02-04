@@ -10,9 +10,8 @@ use Trovit\CronManagerBundle\Exception\CommandNotExistsException;
 use Trovit\CronManagerBundle\Form\TblCronTaskType;
 
 /**
- * TblCronTask controller.
- *
- * @return \Symfony\Component\HttpFoundation\Response
+ * Class TblCronTaskController
+ * @package Trovit\CronManagerBundle\Controller
  */
 class TblCronTaskController extends Controller
 {
@@ -58,12 +57,12 @@ class TblCronTaskController extends Controller
     /**
      * Creates a form to create a TblCronTask entity.
      *
-     * @param TblCronTask $entity The entity
+     * @param TblCronTask $tblCronTask
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(TblCronTask $entity)
+    private function createCreateForm(TblCronTask $tblCronTask)
     {
-        $form = $this->createForm(new TblCronTaskType(), $entity, array(
+        $form = $this->createForm(new TblCronTaskType(), $tblCronTask, array(
             'action' => $this->generateUrl('tblcrontask_create'),
             'method' => 'POST',
         ));
@@ -138,13 +137,13 @@ class TblCronTaskController extends Controller
     /**
     * Creates a form to edit a TblCronTask entity.
     *
-    * @param TblCronTask $entity The entity
+    * @param TblCronTask $tblCronTask
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(TblCronTask $entity)
+    private function createEditForm(TblCronTask $tblCronTask)
     {
-        $form = $this->createForm(new TblCronTaskType(), $entity, array(
-            'action' => $this->generateUrl('tblcrontask_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new TblCronTaskType(), $tblCronTask, array(
+            'action' => $this->generateUrl('tblcrontask_update', array('id' => $tblCronTask->getId())),
             'method' => 'PUT',
         ));
 
@@ -163,9 +162,7 @@ class TblCronTaskController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $cron = $em->getRepository('TrovitCronManagerBundle:TblCronTask')->find($id);
+        $cron = $cron = $this->get('trovit.cron_manager.read_cron_task')->getCronById($id);
 
         if (!$cron) {
             throw $this->createNotFoundException('Unable to find TblCronTask entity.');
@@ -176,10 +173,7 @@ class TblCronTaskController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            if (!$this->get('trovit.cron_manager.command_validator')->commandExists($cron->getCommand())) {
-                throw new CommandNotExistsException($cron->getCommand());
-            }
-            $em->flush();
+            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
 
             return $this->redirect($this->generateUrl('tblcrontask_edit', array('id' => $id)));
         }

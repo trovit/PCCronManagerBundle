@@ -45,7 +45,7 @@ class ReadCronTask
 
     /**
      * @param int $id
-     * @return null|object
+     * @return null|TblCronTask
      */
     public function getCronById($id)
     {

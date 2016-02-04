@@ -46,18 +46,14 @@ class CreateCronTask
      */
     public function create($name, $description, $command, $cronExpression)
     {
-        if (!$this->_commandValidator->commandExists($command)) {
-            throw new CommandNotExistsException($command);
-        }
         $cronTask = new TblCronTask();
         $cronTask
             ->setName($name)
             ->setDescription($description)
             ->setCommand($command)
             ->setCronExpression($cronExpression);
-        $this->_entityManager->persist($cronTask);
-        $this->_entityManager->flush($cronTask);
-        return $cronTask;
+
+        return $this->persistCron($cronTask);
     }
 
 

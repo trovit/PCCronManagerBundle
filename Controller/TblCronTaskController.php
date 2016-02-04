@@ -44,7 +44,7 @@ class TblCronTaskController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->get('trovit.cron_manager.create_cron_task')->create($cron);
+            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
 
             return $this->redirect($this->generateUrl('tblcrontask_show', array('id' => $cron->getId())));
         }

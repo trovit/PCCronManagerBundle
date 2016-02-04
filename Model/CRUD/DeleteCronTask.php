@@ -48,6 +48,7 @@ class DeleteCronTask
             throw new CronTaskNotExistsException($id);
         }
         $this->_entityManager->remove($cronTask);
+        $this->_entityManager->flush($cronTask);
     }
 
     /**
@@ -58,5 +59,6 @@ class DeleteCronTask
     public function delete(TblCronTask $cronTask)
     {
         $this->_entityManager->remove($cronTask);
+        $this->_entityManager->flush($cronTask);
     }
 }

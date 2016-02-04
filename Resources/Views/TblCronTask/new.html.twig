@@ -1,0 +1,39 @@
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<table class="record_properties">
+    <tbody>
+    <tr>
+        <th>Name</th>
+        <td>{{ form_row(form.name) }}</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>{{ form_row(form.description) }}</td>
+    </tr>
+    <tr>
+        <th>Command</th>
+        <td>{{ form_row(form.command) }}</td>
+    </tr>
+    <tr>
+        <th>Cronexpression</th>
+        <td>{{ form_row(form.cronExpression) }}</td>
+    </tr>
+    <tr>
+        <th>Active</th>
+        <td>{{ form_row(form.active) }}</td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>{{ form_row(form.submit) }}</td>
+    </tr>
+    </tbody>
+</table>
+{{ form_end(form) }}
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('tblcrontask') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>

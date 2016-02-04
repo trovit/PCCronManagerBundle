@@ -38,25 +38,15 @@ class CreateCronTask
     /**
      * Creates a new cron task
      *
-     * @param string $name           Name for the cron task
-     * @param string $description    Description of the cron
-     * @param string $command        Command string (i.e.: "cache:clear")
-     * @param string $cronExpression Cron expression (https://en.wikipedia.org/wiki/Cron)
+     * @param TblCronTask $cronTask
      * @return TblCronTask
      * @throws CommandNotExistsException
      */
-    public function create($name, $description, $command, $cronExpression)
+    public function create(TblCronTask $cronTask)
     {
-        if (!$this->_commandValidator->commandExists($command)) {
-            throw new CommandNotExistsException($command);
+        if (!$this->_commandValidator->commandExists($cronTask->getCommand())) {
+            throw new CommandNotExistsException($cronTask->getCommand());
         }
-
-        $cronTask = new TblCronTask();
-        $cronTask
-            ->setName($name)
-            ->setDescription($description)
-            ->setCommand($command)
-            ->setCronExpression($cronExpression);
 
         $this->_entityManager->persist($cronTask);
         $this->_entityManager->flush($cronTask);

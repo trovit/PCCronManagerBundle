@@ -49,3 +49,17 @@ services:
       - @trovit.cron_manager.command_execute
       - @trovit.cron_manager.cron_expression_wrapper
       - %trovit.cron_manager.check_interval%
+
+  trovit.cron_manager.validator.command_exists:
+          class: %trovit.cron_manager.validator.constraints.command_exists.class_path%
+          tags:
+              - { name: validator.constraint_validator, alias: command_exists_validator }
+          arguments:
+            - @trovit.cron_manager.command_validator
+
+  trovit.cron_manager.validator.valid_cron_expression:
+          class: %trovit.cron_manager.validator.constraints.valid_cron_expression.class_path%
+          tags:
+              - { name: validator.constraint_validator, alias: valid_cron_expresion_validator }
+          arguments:
+            - @trovit.cron_manager.cron_expression_wrapper

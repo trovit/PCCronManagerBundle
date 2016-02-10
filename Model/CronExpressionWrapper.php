@@ -28,4 +28,15 @@ class CronExpressionWrapper
         return CronExpression::factory($expression, $fieldFactory);
     }
 
+    /**
+     * Checks if the string is a valid cron expression
+     *
+     * @param string $expression
+     * @return bool
+     */
+    public function isValidExpression($expression)
+    {
+        return CronExpression::isValidExpression($expression);
+    }
+
 }

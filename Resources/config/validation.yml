@@ -1,0 +1,10 @@
+Trovit\CronManagerBundle\Entity\TblCronTask:
+  properties:
+    command:
+      - Trovit\CronManagerBundle\Validator\Constraints\CommandExists: ~
+    cronExpression:
+      - Trovit\CronManagerBundle\Validator\Constraints\ValidCronExpression: ~
+    name:
+      - NotBlank: ~
+    description:
+      - NotBlank: ~

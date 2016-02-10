@@ -1,0 +1,43 @@
+ <table class="records-list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Command</th>
+            <th>Lastrun</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for cron in crons %}
+        <tr>
+            <td><a href="{{ path('tblcrontask_show', { 'id': cron.id }) }}">{{ cron.id }}</a></td>
+            <td>{{ cron.name }}</td>
+            <td>{{ cron.description }}</td>
+            <td>{{ cron.command }}</td>
+            <td>{% if cron.lastRun %}{{ cron.lastRun|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if cron.active == 1 %} Yes {% else %} No {% endif %}</td>
+            <td>
+            <ul>
+                <li>
+                    <a href="{{ path('tblcrontask_show', { 'id': cron.id }) }}">show</a>
+                </li>
+                <li>
+                    <a href="{{ path('tblcrontask_edit', { 'id': cron.id }) }}">edit</a>
+                </li>
+            </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+ <ul>
+    <li>
+        <a href="{{ path('tblcrontask_new') }}">
+            Create a new entry
+        </a>
+    </li>
+ </ul>

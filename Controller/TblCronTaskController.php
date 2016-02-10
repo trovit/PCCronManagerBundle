@@ -43,9 +43,11 @@ class TblCronTaskController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
-
-            return $this->redirect($this->generateUrl('tblcrontask_show', array('id' => $cron->getId())));
+            $this->persistCron($cron);
+                return $this->redirect($this->generateUrl(
+                    'tblcrontask_show',
+                    array('id' => $cron->getId())
+                ));
         }
 
         return $this->render('TrovitCronManagerBundle:TblCronTask:new.html.twig', array(
@@ -92,9 +94,10 @@ class TblCronTaskController extends Controller
      * Finds and displays a TblCronTask entity.
      *
      * @param int $id
+     * @param null|bool $success
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showAction($id)
+    public function showAction($id, $success = null)
     {
         $cron = $this->get('trovit.cron_manager.read_cron_task')->getCronById($id);
 
@@ -107,6 +110,7 @@ class TblCronTaskController extends Controller
         return $this->render('TrovitCronManagerBundle:TblCronTask:show.html.twig', array(
             'cron'        => $cron,
             'delete_form' => $deleteForm->createView(),
+            'success'     => $success
         ));
     }
 
@@ -114,9 +118,10 @@ class TblCronTaskController extends Controller
      * Displays a form to edit an existing TblCronTask entity.
      *
      * @param int $id
+     * @param null|bool $success
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function editAction($id)
+    public function editAction($id, $success = null)
     {
         $cron = $this->get('trovit.cron_manager.read_cron_task')->getCronById($id);
 
@@ -131,6 +136,7 @@ class TblCronTaskController extends Controller
             'cron'        => $cron,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'success'     => $success
         ));
     }
 
@@ -173,9 +179,11 @@ class TblCronTaskController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
-
-            return $this->redirect($this->generateUrl('tblcrontask_edit', array('id' => $id)));
+            $this->persistCron($cron);
+            return $this->redirect($this->generateUrl(
+                'tblcrontask_show',
+                array('id' => $cron->getId())
+            ));
         }
 
         return $this->render('TrovitCronManagerBundle:TblCronTask:edit.html.twig', array(
@@ -224,5 +232,22 @@ class TblCronTaskController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+
+    /**
+     * Persist cron
+     *
+     * @param TblCronTask $cron
+     * @return bool
+     */
+    private function persistCron(TblCronTask $cron)
+    {
+        try {
+            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
+            $success = true;
+        } catch(CommandNotExistsException $e) {
+            $success = false;
+        }
+        return $success;
     }
 }

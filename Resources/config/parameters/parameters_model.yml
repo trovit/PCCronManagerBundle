@@ -1,7 +1,3 @@
-# This parameter list was auto-generated, don't modify this file
-# Use 'app/console configGenerator:generateParameters [bundleName]' to generate the parameters'
-
-
 parameters:
     trovit.cron_manager.model.command_execute.class_path: Trovit\CronManagerBundle\Model\CommandExecute
     trovit.cron_manager.model.command_validator.class_path: Trovit\CronManagerBundle\Model\CommandValidator
@@ -12,3 +8,5 @@ parameters:
     trovit.cron_manager.model.update_cron_task.class_path: Trovit\CronManagerBundle\Model\CRUD\UpdateCronTask
     trovit.cron_manager.model.date_time_wrapper.class_path: Trovit\CronManagerBundle\Model\DateTimeWrapper
     trovit.cron_manager.model.cron_expression_wrapper.class_path: Trovit\CronManagerBundle\Model\CronExpressionWrapper
+    trovit.cron_manager.validator.constraints.command_exists.class_path: Trovit\CronManagerBundle\Validator\Constraints\CommandExistsValidator
+    trovit.cron_manager.validator.constraints.valid_cron_expression.class_path: Trovit\CronManagerBundle\Validator\Constraints\ValidCronExpressionValidator

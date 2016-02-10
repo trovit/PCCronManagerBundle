@@ -94,10 +94,9 @@ class TblCronTaskController extends Controller
      * Finds and displays a TblCronTask entity.
      *
      * @param int $id
-     * @param null|bool $success
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function showAction($id, $success = null)
+    public function showAction($id)
     {
         $cron = $this->get('trovit.cron_manager.read_cron_task')->getCronById($id);
 
@@ -109,8 +108,7 @@ class TblCronTaskController extends Controller
 
         return $this->render('TrovitCronManagerBundle:TblCronTask:show.html.twig', array(
             'cron'        => $cron,
-            'delete_form' => $deleteForm->createView(),
-            'success'     => $success
+            'delete_form' => $deleteForm->createView()
         ));
     }
 
@@ -118,10 +116,9 @@ class TblCronTaskController extends Controller
      * Displays a form to edit an existing TblCronTask entity.
      *
      * @param int $id
-     * @param null|bool $success
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function editAction($id, $success = null)
+    public function editAction($id)
     {
         $cron = $this->get('trovit.cron_manager.read_cron_task')->getCronById($id);
 
@@ -135,8 +132,7 @@ class TblCronTaskController extends Controller
         return $this->render('TrovitCronManagerBundle:TblCronTask:edit.html.twig', array(
             'cron'        => $cron,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-            'success'     => $success
+            'delete_form' => $deleteForm->createView()
         ));
     }
 

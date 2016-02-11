@@ -43,9 +43,11 @@ class TblCronTaskController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
-
-            return $this->redirect($this->generateUrl('tblcrontask_show', array('id' => $cron->getId())));
+            $this->persistCron($cron);
+                return $this->redirect($this->generateUrl(
+                    'tblcrontask_show',
+                    array('id' => $cron->getId())
+                ));
         }
 
         return $this->render('TrovitCronManagerBundle:TblCronTask:new.html.twig', array(
@@ -106,7 +108,7 @@ class TblCronTaskController extends Controller
 
         return $this->render('TrovitCronManagerBundle:TblCronTask:show.html.twig', array(
             'cron'        => $cron,
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $deleteForm->createView()
         ));
     }
 
@@ -130,7 +132,7 @@ class TblCronTaskController extends Controller
         return $this->render('TrovitCronManagerBundle:TblCronTask:edit.html.twig', array(
             'cron'        => $cron,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $deleteForm->createView()
         ));
     }
 
@@ -173,9 +175,11 @@ class TblCronTaskController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
-
-            return $this->redirect($this->generateUrl('tblcrontask_edit', array('id' => $id)));
+            $this->persistCron($cron);
+            return $this->redirect($this->generateUrl(
+                'tblcrontask_show',
+                array('id' => $cron->getId())
+            ));
         }
 
         return $this->render('TrovitCronManagerBundle:TblCronTask:edit.html.twig', array(
@@ -224,5 +228,22 @@ class TblCronTaskController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+
+    /**
+     * Persist cron
+     *
+     * @param TblCronTask $cron
+     * @return bool
+     */
+    private function persistCron(TblCronTask $cron)
+    {
+        try {
+            $this->get('trovit.cron_manager.create_cron_task')->persistCron($cron);
+            $success = true;
+        } catch(CommandNotExistsException $e) {
+            $success = false;
+        }
+        return $success;
     }
 }

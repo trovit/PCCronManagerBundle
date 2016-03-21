@@ -69,9 +69,8 @@ class CronDispatcher
             foreach ($activeCronTasks as $cronTask) {
                 $this->_checkCronTask($cronTask);
             }
-            if ($daemon) {
-                sleep($this->_checkInterval);
-            }
+            sleep($this->_checkInterval);
+
         } while ($daemon);
     }
 

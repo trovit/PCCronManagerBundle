@@ -3,5 +3,5 @@ services:
   trovit.cron_manager.cron_task.repository:
         class: %entityRepository.class%
         public: false
-        factory: [@doctrine.orm.entity_manager, getRepository]
+        factory: ["@doctrine.orm.entity_manager", getRepository]
         arguments: [%trovit.cron_manager.entity.tbl_cron_task.class_path%]

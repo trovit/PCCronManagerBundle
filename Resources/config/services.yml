@@ -3,35 +3,35 @@ services:
   trovit.cron_manager.command_validator:
     class: %trovit.cron_manager.model.command_validator.class_path%
     arguments:
-      - @kernel
+      - "@kernel"
 
   trovit.cron_manager.create_cron_task:
     class: %trovit.cron_manager.model.create_cron_task.class_path%
     arguments:
-      - @doctrine.orm.entity_manager
-      - @trovit.cron_manager.command_validator
+      - "@doctrine.orm.entity_manager"
+      - "@trovit.cron_manager.command_validator"
 
   trovit.cron_manager.update_cron_task:
     class: %trovit.cron_manager.model.update_cron_task.class_path%
     arguments:
-      - @doctrine.orm.entity_manager
-      - @trovit.cron_manager.command_validator
+      - "@doctrine.orm.entity_manager"
+      - "@trovit.cron_manager.command_validator"
 
   trovit.cron_manager.delete_cron_task:
     class: %trovit.cron_manager.model.delete_cron_task.class_path%
     arguments:
-      - @trovit.cron_manager.cron_task.repository
-      - @doctrine.orm.entity_manager
+      - "@trovit.cron_manager.cron_task.repository"
+      - "@doctrine.orm.entity_manager"
 
   trovit.cron_manager.read_cron_task:
     class: %trovit.cron_manager.model.read_cron_task.class_path%
     arguments:
-      - @trovit.cron_manager.cron_task.repository
+      - "@trovit.cron_manager.cron_task.repository"
 
   trovit.cron_manager.command_execute:
     class: %trovit.cron_manager.model.command_execute.class_path%
     arguments:
-      - @trovit.cron_manager.command_validator
+      - "@trovit.cron_manager.command_validator"
       - %trovit.cron_manager.base_console_command%
       - %kernel.environment%
 
@@ -44,10 +44,10 @@ services:
   trovit.cron_manager.cron_dispatcher:
     class: %trovit.cron_manager.model.cron_dispatcher.class_path%
     arguments:
-      - @trovit.cron_manager.read_cron_task
-      - @trovit.cron_manager.update_cron_task
-      - @trovit.cron_manager.command_execute
-      - @trovit.cron_manager.cron_expression_wrapper
+      - "@trovit.cron_manager.read_cron_task"
+      - "@trovit.cron_manager.update_cron_task"
+      - "@trovit.cron_manager.command_execute"
+      - "@trovit.cron_manager.cron_expression_wrapper"
       - %trovit.cron_manager.check_interval%
 
   trovit.cron_manager.validator.command_exists:
@@ -55,11 +55,11 @@ services:
           tags:
               - { name: validator.constraint_validator, alias: command_exists_validator }
           arguments:
-            - @trovit.cron_manager.command_validator
+            - "@trovit.cron_manager.command_validator"
 
   trovit.cron_manager.validator.valid_cron_expression:
           class: %trovit.cron_manager.validator.constraints.valid_cron_expression.class_path%
           tags:
               - { name: validator.constraint_validator, alias: valid_cron_expresion_validator }
           arguments:
-            - @trovit.cron_manager.cron_expression_wrapper
+            - "@trovit.cron_manager.cron_expression_wrapper"

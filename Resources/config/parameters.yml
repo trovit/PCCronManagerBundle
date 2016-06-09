@@ -1,4 +1,4 @@
 parameters:
 
-  trovit.cron_manager.base_console_command: %kernel.root_dir%/console
+  trovit.cron_manager.base_console_command: php -dmemory_limit=256M %kernel.root_dir%/console
   trovit.cron_manager.check_interval: 10
